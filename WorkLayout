@@ -1,0 +1,38 @@
+choices of technologies (e.g. programming languages, database technologies, application servers, . . . )
+{Stephanus}
+
+
+chosen frameworks (e.g. object/relational mappers, web services frameworks)
+{Stephanus}
+
+
+chosen protocols (e.g. JSON vs XML)
+{Marthinus}
+
+
+chosen libraries (e.g. for generating PDFs, JSON or XML marshalling/demarshalling, LDAP integration . . . )
+{Marthinus}
+
+
+the specications of lower levels of granularity
+{Jacques}
+
+
+API specications in the form of UML interfaces and class diagrams for the inputs and outputs and a separate exception class for each 
+pre-condition
+{Cornelius}
+
+
+class diagrams with system classes with attributes (including types), methods, relationships
+{Nicolaas}
+
+
+sequence and/or activity diagrams for detailed system process specications
+{Uteshlen}
+
+
+UI screen designs and user work-flow specications (activity or sequence diagrams)
+{Moeletji}
+
+the design of the database tables
+{Uteshlen}
