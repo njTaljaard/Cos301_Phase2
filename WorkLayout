@@ -15,7 +15,7 @@ chosen libraries (e.g. for generating PDFs, JSON or XML marshalling/demarshallin
 
 
 the specications of lower levels of granularity
-{Jacques}
+{}
 
 
 API specications in the form of UML interfaces and class diagrams for the inputs and outputs and a separate exception class for each 
@@ -28,7 +28,7 @@ class diagrams with system classes with attributes (including types), methods, r
 
 
 sequence and/or activity diagrams for detailed system process specications
-{Uteshlen}
+{Jacques}
 
 
 UI screen designs and user work-flow specications (activity or sequence diagrams)
