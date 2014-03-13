@@ -10,8 +10,6 @@
 \vfuzz=3000pt
 \title{Software Architecture Specification}
 
-%Remove the author and date fields and the space associated with them
-% from the definition of maketitle!
 \makeatletter
 \renewcommand{\@maketitle}
 {
@@ -48,7 +46,7 @@
 	  Uteshlen Nadesan		(28163304)	\\
 	  Moeletji Semenya		(12349136)	\\[6em]
       
-      {\bf Version 1.0}
+      {\bf Version 2.0}
     
 \end{center}%
 
@@ -59,7 +57,7 @@
 %**************************************************************************
 
 \begin{tabbing}
-\hspace*{3cm}\=\hspace*{3cm}\=\hspace*{8cm}\=\hspace*{3cm} \kill
+\hspace*{2.5cm}\=\hspace*{2.5cm}\=\hspace*{7cm}\=\hspace*{3cm} \kill
 03/03/2013 \> Version 1.0 \> Document Created \> Nico Taljaard\\
 12/03/2013 \> Version 1.0 \> API UML Diagrams \> Neels van Rooyen\\
 12/03/2013 \> Version 1.0 \> System Class Diagrams \> Nico Taljaard\\
@@ -68,6 +66,9 @@
 13/03/2013 \> Version 1.0 \> Protocals \& Libraries \> Martin Scoeman\\
 13/03/2013 \> Version 1.0 \> Sequence Diagrams \> Jacques Lewis\\
 13/03/2013 \> Version 2.0 \> Added Diagrams \& Edited layout \> Nico Taljaard\\
+13/03/2013 \> Version 2.0 \> UI Screen Designs \&  \>\\
+						\>\> User Work-Flow Specification \> Moeletji Semenya\\
+13/03/2013 \> Version 2.0 \> Finalized layout \& Structure \> Nico Taljaard\\
 
 \end{tabbing}
 
@@ -241,74 +242,16 @@ These software architecture design decisions are based on the constraints define
 		\vspace{0.5cm}
 
 %**************************************************************************
-%  OVERALL ARCHITECTURE
-%**************************************************************************
-\section{Overall Architecture}
-
-%**************************************************************************
-%  ARCHITECTUAL STRATEGIES
-%**************************************************************************
-	\subsection{Architectural Strategies}
-	
-
-	\subsubsection {Thread Pooling:} 
-		
-
-	\subsubsection {Clustering:} 
-
-
-	\subsubsection{Interception:}
-	
-
-	\subsubsection {Run-Time Lookups:}
-
-
-	\subsubsection {Queuing:}
-
-
-%**************************************************************************
-%  ARCHITECTUAL PATTERNS
-%**************************************************************************
-
-	\subsection{Architectural Patterns}
-
-
-	\subsubsection{Layering:} 
-
-
-
-	\subsubsection{Model-View-Controller(MVC:}
-
-
-
-	\subsubsection{Pipes and Filters:}
-
-
-
-	\subsection{Reference Architectures}
-
-
-
-	\subsection{Technology and Framework Selection}
-
-
-
-	\subsubsection{Database Servers}
-
-
-
-	\subsubsection{Web Server}
-
-
-
-%**************************************************************************
 %  DETAILS OF SYSTEM
 %**************************************************************************
 \newpage
 \section{Details of System}
-
-	\subsubsection{Class Diagram}
 	\vspace{0.5cm}
+	
+	\subsection{Class Diagram}
+	\vspace{0.5cm}
+	
+	These diagrams depicts the classes that will be used with all the methods with parameters and return types and attributes to be used.
 	
 		\begin{figure}[htbp]
 			\centering
@@ -404,13 +347,7 @@ These software architecture design decisions are based on the constraints define
 		\end{figure}
 		
 	\vspace{0.5cm}
-	\subsubsection{Communication Diagram}
-	\vspace{0.5cm}
-
-	
-
-	\vspace{0.5cm}
-	\subsubsection {Sequence Diagram}
+	\subsection {Sequence Diagram}
 	\vspace{0.5cm}
 
 		\begin{figure}[htbp]
@@ -451,52 +388,239 @@ These software architecture design decisions are based on the constraints define
 		
 		\begin{figure}[htbp]
 			\centering
-			\fbox{\includegraphics[width=15cm, height=6.5cm]{./Diagrams/sd_AddMarks.jpeg}}
+			\fbox{\includegraphics[width=15cm, height=6.0cm]{./Diagrams/sd_AddMarks.jpeg}}
 			\caption{Add Marks}
 		\end{figure}
 		
 		\begin{figure}[htbp]
 			\centering
-			\fbox{\includegraphics[width=15cm, height=6.5cm]{./Diagrams/sd_OpenCloseSession.jpeg}}
+			\fbox{\includegraphics[width=15cm, height=6.0cm]{./Diagrams/sd_OpenCloseSession.jpeg}}
 			\caption{Open Close Session}
 		\end{figure}
 
-	\vspace{0.5cm}
-	\subsection{Development View}
-	\vspace{0.5cm}
-
+	\newpage
+	\section{UI Screen Designs and User Work-Flow Specification}
 	
+		This section will look at how the system will be used by the different users. Each functional requirement will be accompanied by the appropriate screen designs(The web and mobile user interfaces). 
 
-	\vspace{0.5cm}
-	\subsubsection{Package Diagram}
+	\subsection{Log In}
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.7\linewidth]{./Diagrams/uml_login}
+		\caption{User log in activity diagram.}
+		\label{fig:uml_login}
+		\end{figure}
+	
+	The activity diagram above is a abstract depiction of what will happen when a user logs into the system. After the user gets authenticated by the system, the authentication response object will contain the users information(the modules and roles) as shown in Figure 3 and 5.
+	
+	\pagebreak
+	
+	\subsubsection{Mobile Interface Screen Designs}
+	
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.7\linewidth, height=12cm]{./Diagrams/mobile_login}
+		\caption{The mobile log in screen design.}
+		\label{fig:mobile_login}
+		\end{figure}
+	
+	\pagebreak
+	
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.7\linewidth, height=12cm]{./Diagrams/mobile_welcomeScreen}
+		\caption{Screen design of a successfull log in request.}
+		\label{fig:mobile_welcomeScreen}
+		\end{figure}
+		Figure 3 shows the modules the user is associated with and the roles users have for particular module. 
 
+	\pagebreak
+	
+	\subsubsection{Web Interface Screen Designs}
+	
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth]{./Diagrams/web_login}
+		\caption{Screen design for web interface}
+		\label{fig:web_login}
+		\end{figure}
+			
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/web_modules&roles}
+		\caption{This is the welcome page the user sees after successfully being authenticated.}
+		\label{fig:web_modules&roles}
+		\end{figure*}
+	
+	\newpage
+	\subsection{Assessment Creation}
+	
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/uml_assessmentCreation}
+		\caption{Activity diagram for creating atomic leaf assessments, aggregate assessments as well as sessions for the atomic assessments.}
+		\label{fig:uml_assessmentCreation}
+		\end{figure}
+	
+		The assessment creation operation is only available to lecturers and only has the web interface as shown below.
+		
+	\pagebreak
+	\newpage	
+	\subsubsection{Web Interface Screen Designs}
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth,height=12cm]{./Diagrams/web_assessmentView}
+		\caption{Screen design for creating an atomic assessment.}
+		\label{fig:web_assessmentView}
+		\end{figure*}
+		
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/web_assessmentComponent}
+		\caption{Screen design for adding aggregate assessments.}
+		\label{fig:web_assessmentComponent}
+		\end{figure*}
+	
+	\pagebreak
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/web_assessmentSession}
+		\caption{Screen design for adding sessions for an atomic assessment.}
+		\label{fig:web_assessmentSession}
+		\end{figure*}
+	
+	\newpage
+	\subsection{Marks Management}
+	
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/uml_markManagement}
+		\caption{Activity diagram depiction of how a student would get marked.}
+		\label{fig:uml_markManagement}
+		\end{figure*}
+			
+		The activity diagram(Figure 10) depicts how a marker would go about marking a student. The activity diagram is closely linked with the screen designs as it shows how the user would go about marking a student.
+	\pagebreak
+	
+	\subsubsection{Mobile Interface Screen Designs}
+	
+			\begin{figure*}[htbp]
+			\centering
+			\includegraphics[width=0.7\linewidth, height=12cm]{./Diagrams/mobile_selectSession}
+			\caption{Screen design of assessment sessions.}
+			\label{fig:mobile_selectSession}
+			\end{figure*}
+			
+	\pagebreak		
+		
+			\begin{figure*}[htbp]
+			\centering
+			\includegraphics[width=0.7\linewidth, height=12cm]{./Diagrams/mobile_searchForStudent}
+			\caption{Screen design of how the students would be displayed and search for on the system.}
+			\label{fig:mobile_searchForStudent}
+			\end{figure*}
+	\pagebreak	
+	
+			\begin{figure*}[htbp]
+			\centering
+			\includegraphics[width=0.7\linewidth, height=12cm]{./Diagrams/mobile_markStudent}
+			\caption{Screen design of the interface used to enter student marks.}
+			\label{fig:mobile_markStudent}
+			\end{figure*}
+			
+	\pagebreak	
+	
+	\subsubsection{Web Interface Screen Designs}
+	
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/web_markerSessions}
+		\caption{List of available marking sessions.}
+		\label{fig:web_markerSessions}
+		\end{figure*}
+			
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/web_searchStudent}
+		\caption{List of students in the sessions who need to be marked.}
+		\label{fig:web_searchStudent}
+		\end{figure*}
+			
+	\pagebreak
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/web_markStudent}
+		\caption{A student being marked.}
+		\label{fig:web_markStudent}
+		\end{figure*}
+	
+	\pagebreak
+	\newpage
+	\subsection{Reporting}
+	
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/uml_reportGenerating}
+		\caption{Activity diagram of how reports would be generated by users.}
+		\label{fig:uml_reportGenerating}
+		\end{figure}
+		
+		Students wll be able to generate their mark reports on either platform(mobile or web interface), while lecturers will only be able to generate assessment and audit reports via the web interface.
+	\pagebreak
+	\subsubsection{Mobile Interface Screen Designs}
+	
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.7\linewidth, height=12cm]{./Diagrams/mobile_studentViewOption}
+		\caption{Options of reports a student can generate.}
+		\label{fig:mobile_studentViewOption}
+		\end{figure}
+	\pagebreak
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.7\linewidth, height=12cm]{./Diagrams/mobile_practicalsView}
+		\caption{List of practicals.}
+		\label{fig:mobile_practicalsView}
+		\end{figure}
+	
+	\clearpage
+	\pagebreak
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.7\linewidth, height=12cm]{./Diagrams/mobile_pracMarksheet}
+		\caption{Screen design of a report for a students practical 1.}
+		\label{fig:mobile_pracMarksheet}
+		\end{figure}
+	\pagebreak		
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.7\linewidth, height=12cm]{./Diagrams/mobile_studentReport}
+		\caption{Screen design for generating a students' mark report. }
+		\label{fig:mobile_studentReport}
+		\end{figure}	
+	\pagebreak	
+	\subsubsection{Web Interface Screen Designs}
+	
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/web_lecturerOptions}
+		\caption{Report options lecturers have.}
+		\label{fig:web_lecturerOptions}
+		\end{figure*}
+	
+		\begin{figure*}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/web_assessmentReport}
+		\caption{Screen design for generating assessment reports.}
+		\label{fig:web_assessmentReport}
+		\end{figure*}
 
-	\vspace{0.5cm}
-	\subsubsection{Component Diagram}
-
-
-	\vspace{0.5cm}
-	\subsection{Process View}
-
-
-	\vspace{0.5cm}
-	\subsection {Physical View}
-
-
-	\vspace{0.5cm}
-	\subsubsection{Deployment Diagram}
-
-
-	\vspace{0.5cm}
-	\subsection{Scenarios}
-
-
-	\vspace{0.5cm}
-	\subsubsection{Use Cases Diagram}
-
-
-	\vspace{0.5cm}
-	\subsection {Component Diagram}
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth, height=12cm]{./Diagrams/web_auditReport}
+		\caption{Screen design for generating audit reports.}
+		\label{fig:web_auditReport}
+		\end{figure}
 
 
 \end{document}
