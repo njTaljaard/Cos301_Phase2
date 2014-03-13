@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{epsfig}
+\usepackage{hyperref}
+
+
+\begin{document}
+
+\section{Database}
+
+The Database software that is to be used is MySQL. The design above will be implemented in MySQL. The population of the database will be taken from the LDAP database of the Department of Computer Science. These will include, but not limited to, student numbers, names, surnames, courses, lecturers’ details, etc. 
+
+\subsection{Student}
+\begin{itemize}
+\item All student details will be imported and added to complete the student table of the database. All students have a unique student number that identifies them, names, surnames and courses can then be added. Adding these details will enable access to all additional tables.
+\end{itemize}
+
+\subsection{Practical}
+\begin{itemize}
+\item The Practical table has the session for that specific practical the number of students assigned to that practical, the Fitchfork marks that can be added although it is not mandatory. The start and end times are also added as they are essential for the application to know when to open and close editing of the database. The practicals are indirectly linked to the lecturers who will have access to their subject’s practicals.
+\end{itemize}
+
+\subsection{Mark}
+\begin{itemize}
+\item A table of marks will capture the marks for each student along with the final mark each student will receive for the practical. Marks are linked to the student and the practical itself via the student number and practical identification number. This will simplify access, not only for the students, but also for the markers and lecturers combined. 
+\end{itemize}
+
+\subsection{Marker}
+\begin{itemize}
+\item Markers are in a separate database and include a password specific to that marker for accessing the android application and include the overseeing lecturer and subject and practical the marker is assigned to.
+\end{itemize}
+
+\subsection{Fitchfork}
+\begin{itemize}
+\item Marks that need to be imported from Fitchfork will be done separately and then added to the above database tables to complete the database entries for the practical. 
+\end{itemize}
+
+\subsection{Lecturer}
+\begin{itemize}
+\item All courses that require marks to be entered into this database will have a lecturer assigned to the course and hence, the practical.
+\end{itemize}
+
+
+
+
+\end{document}
