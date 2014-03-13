@@ -163,9 +163,53 @@ The key quality requirements that Django accommodate are scalability, security, 
 \end{itemize}	
 	
 	\subsection{Protocols}
-	
-	
+	The protocols we will be using are HTTPS for security, LDAP for the \\ computer science web site, XML 		and JSON. \\
+	\linebreak
+	The two main protocols for data transfer in a web application environment are JSON and XML. We will be 	using JSON as our main data transfer \\ protocol, but also have support for XML. \\
+	The reasons will be explained in accordance with the quality requirements.
+	\\\linebreak
+	 \textbf{Security:}
+	\\\linebreak
+	JSON in limited to storing only classical data like numbers and text, but with XML you can store any 		data type you want. That could be a security risk, because you can store an executable as well.
+	\\\linebreak
+	\textbf{Auditability:}
+	\\\linebreak
+	The simplicity of JSON and the fact that it’s only text base, makes it very easy to audit.
+	\\\linebreak
+	\textbf{Testability:}
+	\\\linebreak
+	JSON and XML are easy to test, because both of their implementation is self describing and is cross 		platform independent.
+	\\\linebreak
+	\textbf{Usability:}
+	\\\linebreak
+	Both XML and JSON is human readable, but JSON is more so. The reason is the JSON files are more 			restrictive and a lot less data formats that it supports. JSON uses an array to store data, where XML 		uses a tree. Seeing as arrays are more a structure of object oriented languages than trees are, it 			will be much easier the parse the data in the array than in the tree. 
+	\\\linebreak
+	\textbf{Scalability:}
+	\\\linebreak
+	Using a JSON document, without a schema makes it very easy to scale the JSON document. JSON also has 		no max size or max length of object. So you can send and receive a document without being depended on 		size. The limitations of the size will be determined by the server or browser. 
+	\\\linebreak
+	\textbf{Performance:}
+	\\\linebreak
+	The performance of JSON is very high, because of the fact it is only text base. So there will be no 		support for large files like images, videos and so forth.
+	\\\linebreak
+	\textbf{Conclusion:}
+	\\\linebreak
+	JSON is selected as our main protocol, because it only supports text and no other formats. Seeing how 		our system will only be transferring text, JSON is the best option. Also JSON is simpler to use, 			easier to read and many people are changing from XML to JSON, because it is the newer technology.
+	\\\linebreak
 	\subsection{Libraries}
+	The libraries we will be using, will mostly if not all consist of open source libraries.
+	\\\linebreak
+	\textbf{PDF generator:}
+	\\\linebreak
+	The system must be able to generate PDFs on two different platforms, android and with a web service. 		For android we will be using the iText library that supports creating a PDF on android. For our server 	side, we will be using a PHP library called TCPDF, which will allow us to generate a PDF server side.
+	\\\linebreak
+	\textbf{JSON marshalling/de-marshalling:}
+	\\\linebreak
+	For our JSON marshalling/de-marshalling, we will be using the library EclipseLink MOXy. It works with 		XML, but also works great with JSON. There is a lot of support with this library, if one needed help.
+	\\\linebreak
+	\textbf{LDAP integration:}
+	\\\linebreak
+	We will be using django-auth-ldap 1.1.4 for the Django authentication backend that will authenticate 		against an LDAP service. For python we will be using the python-ldap library to allow us to use python 	to communicate with LDAP.
 
 
 %**************************************************************************
