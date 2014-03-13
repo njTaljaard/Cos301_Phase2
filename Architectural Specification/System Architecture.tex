@@ -7,7 +7,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{pdfpages}
-
+\vfuzz=3000pt
 \title{Software Architecture Specification}
 
 %Remove the author and date fields and the space associated with them
@@ -42,7 +42,8 @@
   \large
       Nico Taljaard			(10153285)	\\
       Neels van Rooyen		(29052735)	\\
-      Martin Scoeman		(10651994)	\\[6em]
+	  Stephan Viljoen       (11008408)  \\[6em]
+      
       {\bf Version 1.0}
     
 \end{center}%
@@ -52,7 +53,6 @@
 %**************************************************************************
 %  CHANGELOG
 %**************************************************************************
-{\LARGE \bf Change Log}\\[2em]
 
 \begin{tabbing}
 \hspace*{3cm}\=\hspace*{3cm}\=\hspace*{8cm}\=\hspace*{3cm} \kill
@@ -98,10 +98,68 @@
 \section{System Description}
 
 	\subsection{Technologies}
-	
+	These software architecture design decisions are based on the constraints defined by the master requirement specification document:
+\indent\indent \linebreak\linebreak\textbf{Programming Languages}
+\begin{itemize}
+\item Python
+\begin{itemize}
+\item A high-level object oriented programming language that can be used for scripting,prototyping, testing and very easy to learn and implement.
+\end{itemize}
+\item HTML
+\begin{itemize}
+\item The system must be accessible to users and HTML Markup language will be used to for 	creating structured displayable content in a web browsers (Mozilla Firefox, Google Chrome, Apple Safari and Microsoft Internet Explorer). Reference 4.1.1.
+\end{itemize}
+\item CSS
+\begin{itemize}
+\item Used for formatting of HTML documents creating rich web interfaces.
+\end{itemize}
+\item JavaScript
+\begin{itemize}
+\item Dynamic programming language used for client side interaction.
+\end{itemize}
+\item SQL
+\begin{itemize}
+\item Used for data managing (insert, delete, update and read) of your relational data using the Object-Relational Mapper.
+\end{itemize}
+\item Java
+\begin{itemize}
+\item A Powerful language with vast libraries with which the android interface will be created. Reference 4.1.2
+\end{itemize}
+\end{itemize}
+\indent\indent \linebreak\linebreak\textbf{Application Server}
+\begin{itemize}
+\item A Django application server will be used to run and deploy the system within the cs.up.ac.za Apache web server. The webserver must be published as SOAP –based.
+
+\end{itemize}                                
+\indent\indent\linebreak \linebreak\textbf{Database Technology}
+\begin{itemize}
+\item MySQL implement the quality requirements stated by the master specification and it decouples the system from the database.
+\begin{itemize}
+\item Scalability and Flexibility
+\begin{itemize}
+\item Provides scalability, sporting the capacity to handle deeply embedded applications 
+Platform flexibility (Linux, UNIX, Mac and Windows)
+\end{itemize}
+\item Security 
+\begin{itemize}
+\item  Offering exceptional features that ensure absolute data protection when looking at database authentication, backup and recovery.
+\end{itemize}
+\end{itemize}
+\end{itemize} 
 	
 	\subsection{Frameworks}
-	
+\indent\indent \linebreak\linebreak\textbf{Object-Relational Mapper}
+\begin{itemize}
+\item A technique for converting data between incompatible types in object-oriented languages. With our application data to outlive the applications process. 
+The persistence to the relational database must be done using the Object-Relational Mapper bundled with Django. Django is the chosen Object-Relational mapper used to obtain, retrieve and transfer data between a variety of platforms such as from the MySQL database to the web client and android interface. You can define your data model in Python and access through the database API.
+\end{itemize}
+
+\indent\indent \linebreak\linebreak\textbf{Web Service Frame Work}
+\begin{itemize}
+\item The Django framework is based on the model view controller, which is used for creating complex database driven websites with the ability of reusability of components and rapid development. 
+The key quality requirements that Django accommodate are scalability, security, reliability and integration at a lesser extent.
+
+\end{itemize}	
 	
 	\subsection{Protocols}
 	
